@@ -1,0 +1,16 @@
+{
+  "buildCommand": "ng build --configuration=production", 
+  "outputDirectory": "dist/espn-fantasy",
+  "devCommand": "ng serve --port $PORT",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
