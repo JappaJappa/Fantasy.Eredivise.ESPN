@@ -75,11 +75,11 @@
             "production": {
               "buildTarget": "espn-fantasy:build:production"
             },
-            "development": {
-              "buildTarget": "espn-fantasy:build:development"
+            "local": {
+              "buildTarget": "espn-fantasy:build:local"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "local"
         },
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n"

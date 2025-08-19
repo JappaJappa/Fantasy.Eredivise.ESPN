@@ -6,7 +6,7 @@ interface User {
   email: string;
 }
 
-export default async function handler(
+export default function handler(
   req: VercelRequest,
   res: VercelResponse
 ) {
@@ -14,6 +14,7 @@ export default async function handler(
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Content-Type', 'application/json');
 
   if (req.method === 'OPTIONS') {
     res.status(200).end();
@@ -27,10 +28,6 @@ export default async function handler(
     ];
     
     res.status(200).json(users);
-  } else if (req.method === 'POST') {
-    const newUser: User = req.body;
-    // Here you'd typically save to database
-    res.status(201).json({ message: 'User created', user: newUser });
   } else {
     res.status(405).json({ message: 'Method not allowed' });
   }
